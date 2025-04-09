@@ -372,9 +372,9 @@ emissions vs. temperature anomalies.</li>
 </div>
 <div id="load-required-libraries" class="section level1">
 <h1>Load Required Libraries</h1>
-<pre class="r"><code>library(ggplot2)
-library(dplyr)
-library(readr)</code></pre>
+<pre class="r"><code>library(ggplot2)  # For creating high-quality plots and graphs
+library(dplyr)    # For data manipulation (filter, mutate, etc.)
+library(readr)    # For reading CSV files efficiently</code></pre>
 <hr />
 </div>
 <div id="load-dataset" class="section level1">
@@ -394,8 +394,8 @@ temperature_data &lt;- read_csv(&quot;GlobalTemperatures.csv&quot;)</code></pre>
 <div id="clean-and-prepare-data" class="section level1">
 <h1>Clean and Prepare Data</h1>
 <pre class="r"><code>temperature_data_clean &lt;- temperature_data %&gt;%
-  filter(!is.na(LandAverageTemperature)) %&gt;%
-  mutate(dt = as.Date(dt))</code></pre>
+  filter(!is.na(LandAverageTemperature)) %&gt;%  # Remove rows where temperature is missing
+  mutate(dt = as.Date(dt))  # Convert &#39;dt&#39; column to Date format</code></pre>
 <hr />
 </div>
 <div id="line-chart-global-temperature-over-time" class="section level1">

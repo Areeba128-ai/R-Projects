@@ -18,9 +18,9 @@ This report demonstrates basic data visualization in R using the **Global Surfac
 #  Load Required Libraries
 
 ```{r load-libraries, message=FALSE}
-library(ggplot2)
-library(dplyr)
-library(readr)
+library(ggplot2)  # For creating high-quality plots and graphs
+library(dplyr)    # For data manipulation (filter, mutate, etc.)
+library(readr)    # For reading CSV files efficiently
 ```
 
 ---
@@ -38,8 +38,9 @@ temperature_data <- read_csv("GlobalTemperatures.csv")
 
 ```{r clean-data}
 temperature_data_clean <- temperature_data %>%
-  filter(!is.na(LandAverageTemperature)) %>%
-  mutate(dt = as.Date(dt))
+  filter(!is.na(LandAverageTemperature)) %>%  # Remove rows where temperature is missing
+  mutate(dt = as.Date(dt))  # Convert 'dt' column to Date format
+
 ```
 
 ---
